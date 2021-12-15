@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:      
+      - echo Installing source NPM
+      - cd packages/marketing && npm install
+  pre_build:
+    commands:
+      - echo Installing dependencies...     
+  build:
+    commands:
+      - echo Build started...
+      - npm run build
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: packages/marketing/dist
+

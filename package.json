@@ -1,0 +1,21 @@
+{
+  "name": "filmio-microfrontend-lerna-module-federation",
+  "version": "0.0.0",
+  "scripts": {
+    "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
+    "start": "concurrently \"wsrun --parallel start\""
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "simran@filmio.com",
+  "dependencies": {
+    "concurrently": "^6.2.1",
+    "lerna": "^4.0.0",
+    "wsrun": "^5.2.4"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Filmio-Inc/Filmio-Micro-Front-End",
+  "license": "MIT"
+}

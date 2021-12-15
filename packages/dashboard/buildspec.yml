@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:      
+      - echo Installing source NPM
+      - cd packages/dashboard && npm install && npm install chart.js@latest   
+  pre_build:
+    commands:
+      - echo Installing dependencies...     
+  build:
+    commands:
+      - echo Build started...
+      - npm run build
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: packages/dashboard/dist

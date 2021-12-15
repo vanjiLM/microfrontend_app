@@ -1,0 +1,22 @@
+version: 0.2
+env:  
+  variables:
+    PRODUCTION_DOMAIN: "https://d1473vjyfcw7sd.cloudfront.net"    
+phases:
+  install:
+    commands:      
+      - echo Installing source NPM
+      - cd packages/container && npm install
+  pre_build:
+    commands:
+      - echo Installing dependencies...     
+  build:
+    commands:
+      - echo Build started...
+      - npm run build
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: packages/container/dist
+  
